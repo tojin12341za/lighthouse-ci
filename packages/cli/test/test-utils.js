@@ -100,7 +100,7 @@ async function startServer(sqlFile, extraArgs = []) {
 }
 
 function waitForCondition(fn, label) {
-  return testingLibrary.wait(() => {
+  return testingLibrary.waitFor(() => {
     if (!fn()) {
       throw new Error(typeof label === 'function' ? label() : label || 'Condition not met');
     }
