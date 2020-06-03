@@ -148,6 +148,13 @@ declare global {
 
       export type StorageMethod = StorageMethod_;
 
+      export interface MonitorConfiguration {
+        urls: string[];
+        schedule: string;
+        numberOfRuns: number;
+        buildToken: string;
+      }
+
       export interface StorageOptions {
         storageMethod: 'sql' | 'spanner';
         sqlDialect: 'sqlite' | 'mysql' | 'postgres';
@@ -169,6 +176,7 @@ declare global {
         logLevel: 'silent' | 'verbose';
         port: number;
         storage: StorageOptions;
+        monitor?: Array<MonitorConfiguration>;
         basicAuth?: {
           username?: string;
           password?: string;
