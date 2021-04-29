@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - patrickhulce
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: puppeteer
+    versions:
+    - 5.5.0
+    - 6.0.0
+    - 7.0.0
+    - 7.0.1
+    - 7.0.3
+    - 7.0.4
+    - 7.1.0
+    - 8.0.0
+  - dependency-name: eslint-plugin-prettier
+    versions:
+    - 3.3.1
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope
